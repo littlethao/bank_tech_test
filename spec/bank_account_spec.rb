@@ -18,4 +18,14 @@ describe BankAccount do
       expect{ bank_account.deposit(1000) }.to change{ bank_account.instance_variable_get(:@balance) }.by 1000
     end
   end
+
+  context '#withdraw' do
+    it 'knows a withdrawal' do
+      expect(bank_account).to respond_to(:withdraw).with(1).argument
+    end
+
+    it 'knows to deduct from balance when money is being withdrawn from bank account' do
+      expect{ bank_account.withdraw(500) }.to change{ bank_account.instance_variable_get(:@balance) }.by -500
+    end
+  end
 end

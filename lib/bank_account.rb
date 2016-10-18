@@ -10,6 +10,10 @@ INITIAL_BALANCE = 0
     @balance += amount
   end
 
+  def withdraw(amount)
+    @balance -= amount
+  end
+
 private
 
 attr_reader :balance
