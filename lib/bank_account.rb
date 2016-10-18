@@ -1,3 +1,5 @@
+# Understands to keep track of the balance state
+
 class BankAccount
 
 INITIAL_BALANCE = 0
