@@ -32,6 +32,5 @@ I want to be able to withdraw money from my bank account
 
 As a client  
 So that I can keep track of my incoming and outgoing cash flows  
-I want to be able to print bank statements with my transactions and its details  
+I want to be able to print bank statements with my transactions stating the date, credit, debit, updated balance    
 ```  
-  
