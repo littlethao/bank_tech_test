@@ -1,15 +1,17 @@
 require 'bank_transaction'
 
 describe BankTransaction do
-  it 'knows the date of a transaction' do
-    expect(subject.date).to eq("18/10/2016")
+  context '#deposit_amount(amount, balance)' do
+    it 'knows the deposit amount with an updated balance of a transaction' do
+      subject.deposit_amount(1000, 2000)
+      expect(subject.instance_variable_get(:@bank_transactions)).to eq([{:date=>nil, :credit=>nil, :debit=>1000, :balance=>2000}])
+    end
   end
 
-  it 'knows the amount of a transaction' do
-    expect(subject.amount).to eq(1000)
-  end
-
-  it 'knows the balance of a transaction' do
-    expect(subject.balance).to eq(2000)
+  context '#withdrawal_amount(amount, balance)' do
+    it 'knows the withdrawal amount with an updated balance of a transaction' do
+      subject.withdrawal_amount(500, 1500)
+      expect(subject.instance_variable_get(:@bank_transactions)).to eq([{:date=>nil, :credit=>500, :debit=>nil, :balance=>1500}])
+    end
   end
 end

@@ -2,15 +2,23 @@
 
 class BankTransaction
 
-  def date
-    "18/10/2016"
+attr_reader :transaction, :bank_transactions
+
+  def initialize
+    @bank_transactions = []
+    @transaction = {date: nil, credit: nil, debit: nil, balance: nil}
   end
 
-  def amount
-    1000
+  def deposit_amount(amount, balance)
+    @transaction[:debit] = amount
+    @transaction[:balance] = balance
+    @bank_transactions << @transaction
   end
 
-  def balance
-    2000
+  def withdrawal_amount(amount, balance)
+    @transaction[:credit] = amount
+    @transaction[:balance] = balance
+    @bank_transactions << @transaction
   end
+
 end
